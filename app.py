@@ -98,7 +98,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.document_loaders import UnstructuredURLLoader
 from langchain_community.document_loaders import UnstructuredURLLoader
 #from langchain.embeddings import OpenAIEmbeddings
-#from langchain_community.embeddings import OpenAIEmbeddings
+from langchain_community.embeddings import OpenAIEmbeddings
 # from langchain.vectorstores import FAISS
 from langchain_community.vectorstores import FAISS
 
@@ -111,6 +111,7 @@ with open('flask_docs_db2.pkl', 'rb') as f:
     vector_store = pickle.load(f)
 
 llm = OpenAI(temperature=0.9, max_tokens=100, openai_api_key=os.getenv('OPENAI_API_KEY'), model="gpt-3.5-turbo-instruct")
+openai = OpenAIEmbeddings(openai_api_key=os.getenv('OPENAI_API_KEY'), tiktoken_enabled=False)
 
 # Route for the homepage
 @app.route('/')
@@ -170,7 +171,7 @@ def ask():
 
         result = chain(
             {"question": question},
-            return_only_outputs=True
+            return_only_outputs=True,
         )
         answer = result['answer'] + '\nSources: ' + ''.join(result['sources'])
         return render_template('main.html', question=question, answer=answer)
