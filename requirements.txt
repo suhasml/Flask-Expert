@@ -1,6 +1,7 @@
 flask
 requests
 dotenv
+chromadb
 faiss-cpu
 sentence-transformers
 unstructured 
