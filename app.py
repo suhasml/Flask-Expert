@@ -166,8 +166,7 @@ def ask():
         # Save the question to your database or perform any other necessary actions
         chain = RetrievalQAWithSourcesChain.from_llm(
             llm = llm,
-            retriever= vector_store.as_retriever(),
-            embeddings = openai
+            retriever= vector_store.as_retriever()
         )
 
         result = chain(
