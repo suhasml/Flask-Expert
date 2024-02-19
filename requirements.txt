@@ -1,4 +1,5 @@
 flask
+pip
 requests
 dotenv
 chromadb
