@@ -1,6 +1,6 @@
 flask
 requests
-openai
+openai==1.12.0
 faiss-cpu
 langchain
 langchain_community
