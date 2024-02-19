@@ -97,7 +97,7 @@ from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 # from langchain.document_loaders import UnstructuredURLLoader
 from langchain_community.document_loaders import UnstructuredURLLoader
-from langchain.embeddings import OpenAIEmbeddings
+#from langchain.embeddings import OpenAIEmbeddings
 #from langchain_community.embeddings import OpenAIEmbeddings
 # from langchain.vectorstores import FAISS
 from langchain_community.vectorstores import FAISS
