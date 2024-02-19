@@ -107,7 +107,7 @@ from langchain_community.vectorstores import FAISS
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
-with open('flask_docs_db2.pkl', 'rb') as f:
+with open('flask_docs_db2-1.pkl', 'rb') as f:
     vector_store = pickle.load(f)
 
 llm = OpenAI(temperature=0.9, max_tokens=100, openai_api_key=os.getenv('OPENAI_API_KEY'), model="gpt-3.5-turbo-instruct")
@@ -167,6 +167,7 @@ def ask():
         chain = RetrievalQAWithSourcesChain.from_llm(
             llm = llm,
             retriever= vector_store.as_retriever(),
+            embeddings = openai
         )
 
         result = chain(
