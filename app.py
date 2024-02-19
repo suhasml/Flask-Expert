@@ -8,7 +8,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.vectorstores import FAISS
-from env import OPENAI_API_KEY  
+#from env import OPENAI_API_KEY  
 
 
 app = Flask(__name__)
@@ -17,7 +17,7 @@ app.secret_key = 'supersecretkey'
 with open('flask_docs_db.pkl', 'rb') as f:
     vector_store = pickle.load(f)
 
-llm = OpenAI(temperature=0.9, max_tokens=100, openai_api_key=OPENAI_API_KEY, model="gpt-3.5-turbo-instruct")
+llm = OpenAI(temperature=0.9, max_tokens=100, openai_api_key=os.OPENAI_API_KEY, model="gpt-3.5-turbo-instruct")
 
 # Route for the homepage
 @app.route('/')
