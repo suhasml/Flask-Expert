@@ -5,5 +5,4 @@ faiss-cpu
 sentence-transformers
 unstructured 
 libmagic 
-python-magic-bin
 langchain
