@@ -1,4 +1,4 @@
 flask
 requests
-dotenv
-langcorn
+python-dotenv
+langchain
