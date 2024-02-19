@@ -1,13 +1,4 @@
 flask
-pip
 requests
 dotenv
-chromadb
-faiss-cpu
-sentence-transformers
-unstructured 
-libmagic 
-python-magic 
-python-magic-bin
-openai
-langchain
+langcorn
