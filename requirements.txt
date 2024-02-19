@@ -4,3 +4,4 @@ openai==0.27.8
 faiss-cpu
 langchain==0.0.284
 langchain_community
+tiktoken
