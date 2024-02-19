@@ -77,7 +77,7 @@ def ask():
 
         result = chain(
             {"question": question},
-            return_only_outputs=True
+            return_only_outputs=True,
         )
         answer = result['answer'] + '\nSources: ' + ''.join(result['sources'])
         return render_template('main.html', question=question, answer=answer)
@@ -86,7 +86,7 @@ def ask():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
 # from flask import Flask, render_template, request, redirect, url_for, flash
 # import requests
