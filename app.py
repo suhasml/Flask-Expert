@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 import requests
 import pickle  
 import os
-from langchain import OpenAI
+from langchain_community.llms import OpenAI
 from langchain.chains import RetrievalQAWithSourcesChain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.document_loaders import UnstructuredURLLoader
